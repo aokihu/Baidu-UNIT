@@ -69,11 +69,15 @@ class BaiduUNIT extends EventEmitter {
    * @param {string} text You want to process string
    */
   query(text) {
-    const postData = JSON.stringify({ scene_id: this._.sceneid, query: text, session_id: this._.sessionid });
-    console.log(postData);
+    const postData = JSON.stringify({
+      scene_id: this._.sceneid,
+      query: text,
+      session_id:
+      this._.sessionid });
 
-    const url = `${UNIT_SERVICE_URL}?access_token=${this.token}`;
-    console.log(url);
+
+    const url = `${UNIT_SERVICE_URL}?access_token=${this._.token}`;
+
     got({
       headers: { 'Content-Type': 'application/json;' },
       url,
@@ -81,6 +85,7 @@ class BaiduUNIT extends EventEmitter {
       postData,
     }).then((body) => {
       const ret = JSON.parse(body);
+      this.emit('debug', body);
       if (ret.error_code) {
         this.emit('error', ret);
       } else {
