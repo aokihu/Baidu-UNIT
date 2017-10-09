@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 
 const EventEmitter = require('events');
@@ -72,8 +72,8 @@ class BaiduUNIT extends EventEmitter {
     const postData = JSON.stringify({
       scene_id: this._.sceneid,
       query: text,
-      session_id:
-      this._.sessionid });
+      session_id:this._.sessionid
+     });
 
 
     const url = `${UNIT_SERVICE_URL}?access_token=${this._.token}`;
