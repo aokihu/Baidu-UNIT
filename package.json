@@ -1,0 +1,8 @@
+{
+  "name": "baidu_unit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/aokihu/Baidu-UNIT.git",
+  "author": "aokihu <aokihu@gmail.com>",
+  "license": "MIT"
+}
