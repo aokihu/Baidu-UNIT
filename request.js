@@ -1,4 +1,6 @@
 const { URL } = require('url');
+const http = require('http');
+const https = require('https');
 
 /**
  * 实现got操作
@@ -17,10 +19,10 @@ function got({ method = 'GET', url = '', headers = {}, postData = null }) {
     let client = null;
 
     if (parsedUrl.protocol === 'https:') {
-      client = require('https');
+      client = https;
       options.port = 443;
     } else {
-      client = require('http');
+      client = http;
     }
 
     const req = client.request(options, (res) => {
@@ -30,7 +32,7 @@ function got({ method = 'GET', url = '', headers = {}, postData = null }) {
     });
 
     req.on('error', reject);
-    req.write(postData);
+    !!postData ? req.write(postData) : '';
     req.end();
   });
 }

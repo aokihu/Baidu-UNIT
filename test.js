@@ -9,7 +9,7 @@ const unit = new UNIT({
 
 unit.init();
 unit.on('ready', () => {
-  unit.query('打开电灯');
+  unit.query('现在时间');
 });
 
 unit.on('success', (data) => {
