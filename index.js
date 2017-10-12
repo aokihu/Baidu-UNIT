@@ -4,7 +4,7 @@
 
 const EventEmitter = require('events');
 
-const got = require('./request.js');
+const got = require('little-fetch');
 const Token = require('./token.js');
 
 const UNIT_SERVICE_URL = 'https://aip.baidubce.com/rpc/2.0/solution/v1/unit_utterance';

@@ -1,8 +1,14 @@
 {
   "name": "baidu_unit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
   "repository": "https://github.com/aokihu/Baidu-UNIT.git",
   "author": "aokihu <aokihu@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "little-fetch": "^1.0.4"
+  }
 }
