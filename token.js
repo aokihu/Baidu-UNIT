@@ -10,7 +10,7 @@ const fs = require('fs');
 const EventEmitter = require('events');
 const path = require('path');
 const querystring = require('querystring');
-const got = require('./request.js');
+const got = require('little-fetch');
 
 // Token url
 const AccessUrl = 'http://openapi.baidu.com/oauth/2.0/token';
@@ -68,10 +68,8 @@ class Token extends EventEmitter {
   requestToken(params) {
     // 从百度获取token session
     const url = `${AccessUrl}?${querystring.stringify(params)}`;
-    console.log(url);
     return got({ url })
       .then((body) => {
-        console.log(body);
         const { access_token: token } = JSON.parse(body);
         return this.saveToken(token);
       })
@@ -89,7 +87,7 @@ class Token extends EventEmitter {
           } else {
             resolve(token);
           }
-        },
+        }
       );
     });
   }
