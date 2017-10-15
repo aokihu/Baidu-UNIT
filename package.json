@@ -1,6 +1,6 @@
 {
   "name": "baidu_unit",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
     "test": "node ./test.js"
@@ -9,6 +9,8 @@
   "author": "aokihu <aokihu@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "little-fetch": "^1.0.4"
+    "iconv-lite": "^0.4.19",
+    "little-fetch": "^1.0.4",
+    "ramda": "^0.25.0"
   }
 }

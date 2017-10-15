@@ -9,11 +9,12 @@ const unit = new UNIT({
 
 unit.init();
 unit.on('ready', () => {
-  unit.query('现在时间,');
+  unit.query('现在几点');
 });
+
+unit.on('error', console.log);
+unit.on('fail', console.log)
 
 unit.on('success', (data) => {
   console.log(data);
-  data[0].slots.map(console.log);
-})
-;
+});
